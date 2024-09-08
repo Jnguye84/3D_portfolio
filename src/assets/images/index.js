@@ -12,6 +12,8 @@ import moviesml from './moviesml.png'
 import bb from './BB.png'
 import writing from './writing.png'
 import problemista from './problemista.png'
+import me from './me.jpg'
+
 export {
     hero,
     meta,
@@ -26,5 +28,6 @@ export {
     moviesml,
     bb,
     writing,
-    problemista
+    problemista,
+    me
 }

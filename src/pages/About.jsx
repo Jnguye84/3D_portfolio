@@ -5,7 +5,7 @@ import {
 
 import { CTA } from "../components";
 import "react-vertical-timeline-component/style.min.css";
-
+import {me} from "../assets/images";
 const About = () => {
   return (
     <section className='max-container flex flex-col md:flex-row items-center justify-between my-20'>
@@ -25,7 +25,7 @@ const About = () => {
       {/* Image Section */}
       <div className='w-full md:w-1/2 p-4 flex justify-center'>
         <img
-          src='/path/to/your/image.jpg'
+          src={me}
           alt='Profile Picture'
           className='w-full h-auto max-w-sm object-cover'
         />
