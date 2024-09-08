@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { CTA } from "../components";
-import { projects } from "../constants";
+import { Entertainmentprojects } from "../constants";
 import { arrow } from "../assets/icons";
 
 const Projects = () => {
@@ -9,14 +9,14 @@ const Projects = () => {
     <section className='max-container'>
 
       <div className='flex flex-wrap my-20 gap-16'>
-        {projects.map((project) => (
+        {Entertainmentprojects.map((project) => (
           <div className='lg:w-[400px] w-full' key={project.name}>
               <div className={`btn-back rounded-xl ${project.theme}`} />
               <div className='btn-front rounded-xl flex justify-center items-center'>
                 <img
                   src={project.iconUrl}
                   alt='threads'
-                  className='w-full h-60 object-contain'
+                  className='w-120 h-60 object-contain'
                 />
               </div>
 
@@ -27,40 +27,6 @@ const Projects = () => {
               <p className='mt-2 text-slate-500'>{project.description}</p>
               <div className='mt-5 flex items-center gap-2 font-poppins'>
               {project.link && (
-                  <>
-                    <Link
-                      to={project.link}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='font-semibold text-blue-600'
-                    >
-                      Github Link
-                    </Link>
-                    <img
-                      src={arrow}
-                      alt='arrow'
-                      className='w-4 h-4 object-contain'
-                    />
-                  </>
-                )}
-                {project.videolink && (
-                  <>
-                    <Link
-                      to={project.videolink}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='font-semibold text-blue-600'
-                    >
-                      Video Demo
-                    </Link>
-                    <img
-                      src={arrow}
-                      alt='arrow'
-                      className='w-4 h-4 object-contain'
-                    />
-                  </>
-                )}
-                {project.onlylink && (
                   <>
                     <Link
                       to={project.link}

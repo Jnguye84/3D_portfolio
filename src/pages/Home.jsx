@@ -1,117 +1,140 @@
-import { Canvas } from "@react-three/fiber";
-import { Suspense, useEffect, useRef, useState } from "react";
+// import { Canvas } from "@react-three/fiber";
+// import { Suspense, useEffect, useRef, useState } from "react";
 
-import sakura from "../assets/sakura.mp3";
-import { HomeInfo, Loader } from "../components";
-import { soundoff, soundon } from "../assets/icons";
-import { Bird, Island, Plane, Sky } from "../models";
+// import sakura from "../assets/sakura.mp3";
+// import { HomeInfo, Loader } from "../components";
+// import { soundoff, soundon } from "../assets/icons";
+// import { Bird, Island, Plane, Sky, Barbie} from "../models";
+
+import React, { useRef, useEffect } from 'react';
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 const Home = () => {
-  const audioRef = useRef(new Audio(sakura));
-  audioRef.current.volume = 0.4;
-  audioRef.current.loop = true;
-
-  const [currentStage, setCurrentStage] = useState(1);
-  const [isRotating, setIsRotating] = useState(false);
-  const [isPlayingMusic, setIsPlayingMusic] = useState(false);
+  const mountRef = useRef(null);
 
   useEffect(() => {
-    if (isPlayingMusic) {
-      audioRef.current.play();
-    }
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(0xffffff);
+    renderer.setPixelRatio(window.devicePixelRatio);
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
+    camera.position.set(6, 4, -6);
+    camera.lookAt(new THREE.Vector3(3, 3, -3));
+
+    const groundGeometry = new THREE.PlaneGeometry(20, 20, 32, 32);
+    groundGeometry.rotateX(-Math.PI / 2);
+    const groundMaterial = new THREE.MeshStandardMaterial({
+      color: 0xffffff,
+      side: THREE.DoubleSide
+    });
+    const groundMesh = new THREE.Mesh(groundGeometry, groundMaterial);
+    groundMesh.castShadow = false;
+    groundMesh.receiveShadow = true;
+    scene.add(groundMesh);
+
+    const ambientLight = new THREE.AmbientLight(0xffffff, 3); // Ambient light to soften shadows
+    scene.add(ambientLight);
+
+    let barbieBox;
+
+    const loader = new GLTFLoader().setPath('/');
+    loader.load('scene.gltf', (gltf) => {
+      console.log('Loading model');
+      barbieBox = gltf.scene;
+
+      barbieBox.traverse((child) => {
+        if (child.isMesh) {
+          child.castShadow = true;
+          child.receiveShadow = true;
+          child.material.side = THREE.DoubleSide;
+        }
+      });
+
+      barbieBox.position.set(1, 1, -1);
+      scene.add(barbieBox);
+    }, (xhr) => {
+      console.log(`Loading ${xhr.loaded / xhr.total * 100}%`);
+    }, (error) => {
+      console.error(error);
+    });
+
+    mountRef.current.appendChild(renderer.domElement);
+
+    const handleResize = () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    let mouseX = 0, mouseY = 0;
+    let previousMouseX = 0, previousMouseY = 0;
+    let isMouseDown = false;
+
+    const onMouseDown = (event) => {
+      isMouseDown = true;
+      previousMouseX = event.clientX;
+      previousMouseY = event.clientY;
+    };
+
+    const onMouseUp = () => {
+      isMouseDown = false;
+    };
+
+    const onMouseMove = (event) => {
+      if (isMouseDown) {
+        mouseX = event.clientX;
+        mouseY = event.clientY;
+
+        const deltaX = mouseX - previousMouseX;
+        const deltaY = mouseY - previousMouseY;
+
+        if (barbieBox) {
+          barbieBox.rotation.y += deltaX * 0.01;
+          barbieBox.rotation.x += deltaY * 0.01;
+        }
+
+        previousMouseX = mouseX;
+        previousMouseY = mouseY;
+      }
+    };
+
+    window.addEventListener('mousedown', onMouseDown);
+    window.addEventListener('mouseup', onMouseUp);
+    window.addEventListener('mousemove', onMouseMove);
+
+    const animate = () => {
+      requestAnimationFrame(animate);
+
+      if (barbieBox) {
+        barbieBox.rotation.y += 0.005;
+      }
+      renderer.render(scene, camera);
+    };
+
+    animate();
 
     return () => {
-      audioRef.current.pause();
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('mousedown', onMouseDown);
+      window.removeEventListener('mouseup', onMouseUp);
+      window.removeEventListener('mousemove', onMouseMove);
+
+      if (mountRef.current) {
+        while (mountRef.current.firstChild) {
+          mountRef.current.removeChild(mountRef.current.firstChild);
+        }
+      }
     };
-  }, [isPlayingMusic]);
-
-  const adjustBiplaneForScreenSize = () => {
-    let screenScale, screenPosition;
-
-    // If screen width is less than 768px, adjust the scale and position
-    if (window.innerWidth < 768) {
-      screenScale = [1.5, 1.5, 1.5];
-      screenPosition = [0, -1.5, 0];
-    } else {
-      screenScale = [3, 3, 3];
-      screenPosition = [0, -4, -4];
-    }
-
-    return [screenScale, screenPosition];
-  };
-
-  const adjustIslandForScreenSize = () => {
-    let screenScale, screenPosition;
-
-    if (window.innerWidth < 768) {
-      screenScale = [0.9, 0.9, 0.9];
-      screenPosition = [0, -6.5, -43.4];
-    } else {
-      screenScale = [1, 1, 1];
-      screenPosition = [0, -6.5, -43.4];
-    }
-
-    return [screenScale, screenPosition];
-  };
-
-  const [biplaneScale, biplanePosition] = adjustBiplaneForScreenSize();
-  const [islandScale, islandPosition] = adjustIslandForScreenSize();
-
+  }, []);
   return (
     <section className='w-full h-screen relative'>
-      <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
-        {currentStage && <HomeInfo currentStage={currentStage} />}
-      </div>
-
-      <Canvas
-        className={`w-full h-screen bg-transparent ${
-          isRotating ? "cursor-grabbing" : "cursor-grab"
-        }`}
-        camera={{ near: 0.1, far: 1000 }}
-      >
-        <Suspense fallback={<Loader />}>
-          <directionalLight position={[1, 1, 1]} intensity={2} />
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 5, 10]} intensity={2} />
-          <spotLight
-            position={[0, 50, 10]}
-            angle={0.15}
-            penumbra={1}
-            intensity={2}
-          />
-          <hemisphereLight
-            skyColor='#b1e1ff'
-            groundColor='#000000'
-            intensity={1}
-          />
-
-          <Bird />
-          <Sky isRotating={isRotating} />
-          <Island
-            isRotating={isRotating}
-            setIsRotating={setIsRotating}
-            setCurrentStage={setCurrentStage}
-            position={islandPosition}
-            rotation={[0.1, 4.7077, 0]}
-            scale={islandScale}
-          />
-          <Plane
-            isRotating={isRotating}
-            position={biplanePosition}
-            rotation={[0, 20.1, 0]}
-            scale={biplaneScale}
-          />
-        </Suspense>
-      </Canvas>
-
-      <div className='absolute bottom-2 left-2'>
-        <img
-          src={!isPlayingMusic ? soundoff : soundon}
-          alt='jukebox'
-          onClick={() => setIsPlayingMusic(!isPlayingMusic)}
-          className='w-10 h-10 cursor-pointer object-contain'
-        />
-      </div>
+      <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center' ref={mountRef}></div>
     </section>
   );
 };

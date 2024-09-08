@@ -3,13 +3,28 @@ import meta from './meta.png'
 import shopify from './shopify.png'
 import starbucks from './starbucks.png'
 import tesla from './tesla.png'
-import logo from './logo.svg'
-
+import logo from './HOME.png'
+import makeup from './Makeup.PNG'
+import moviecard from './moviecard.jpg'
+import biotech from './biotech.jpg'
+import druganalysis from './druganalysis.jpg'
+import moviesml from './moviesml.png'
+import bb from './BB.png'
+import writing from './writing.png'
+import problemista from './problemista.png'
 export {
     hero,
     meta,
     shopify,
     starbucks,
     tesla,
-    logo
+    logo,
+    makeup,
+    moviecard,
+    biotech,
+    druganalysis,
+    moviesml,
+    bb,
+    writing,
+    problemista
 }

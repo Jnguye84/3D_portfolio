@@ -1,0 +1,11 @@
+Model Information:
+* title:	Barbie The Movie [Barbie Box]
+* source:	https://sketchfab.com/3d-models/barbie-the-movie-barbie-box-bec035eb61b04f4ab32c4e4d0760cc49
+* author:	shinnymodels (https://sketchfab.com/shinnymodels)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Barbie The Movie [Barbie Box]" (https://sketchfab.com/3d-models/barbie-the-movie-barbie-box-bec035eb61b04f4ab32c4e4d0760cc49) by shinnymodels (https://sketchfab.com/shinnymodels) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

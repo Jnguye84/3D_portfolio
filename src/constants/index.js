@@ -1,9 +1,7 @@
-import { meta, shopify, starbucks, tesla } from "../assets/images";
+import { meta, shopify, starbucks, tesla, makeup,moviecard,biotech, druganalysis, moviesml, bb, problemista} from "../assets/images";
 import {
-    car,
     contact,
     css,
-    estate,
     express,
     git,
     github,
@@ -15,16 +13,14 @@ import {
     mui,
     nextjs,
     nodejs,
-    pricewise,
     react,
     redux,
     sass,
-    snapgram,
-    summiz,
     tailwindcss,
-    threads,
     typescript
 } from "../assets/icons";
+
+
 
 export const skills = [
     {
@@ -109,61 +105,6 @@ export const skills = [
     }
 ];
 
-export const experiences = [
-    {
-        title: "React.js Developer",
-        company_name: "Starbucks",
-        icon: starbucks,
-        iconBg: "#accbe1",
-        date: "March 2020 - April 2021",
-        points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
-        ],
-    },
-    {
-        title: "React Native Developer",
-        company_name: "Tesla",
-        icon: tesla,
-        iconBg: "#fbc3bc",
-        date: "Jan 2021 - Feb 2022",
-        points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
-        ],
-    },
-    {
-        title: "Web Developer",
-        company_name: "Shopify",
-        icon: shopify,
-        iconBg: "#b7e4c7",
-        date: "Jan 2022 - Jan 2023",
-        points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
-        ],
-    },
-    {
-        title: "Full stack Developer",
-        company_name: "Meta",
-        icon: meta,
-        iconBg: "#a2d2ff",
-        date: "Jan 2023 - Present",
-        points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
-        ],
-    },
-];
-
 export const socialLinks = [
     {
         name: 'Contact',
@@ -173,56 +114,69 @@ export const socialLinks = [
     {
         name: 'GitHub',
         iconUrl: github,
-        link: 'https://github.com/YourGitHubUsername',
+        link: 'https://github.com/Jnguye84',
     },
     {
         name: 'LinkedIn',
         iconUrl: linkedin,
-        link: 'https://www.linkedin.com/in/YourLinkedInUsername',
+        link: 'https://www.linkedin.com/in/jessica-nguyen-gmu/',
     }
 ];
 
 export const projects = [
     {
-        iconUrl: pricewise,
+        iconUrl: moviesml,
         theme: 'btn-back-red',
-        name: 'Amazon Price Tracker',
-        description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
-        link: 'https://github.com/adrianhajdin/pricewise',
+        name: 'Movies and Machine Learning Club',
+        description: 'Founder and president of club that started in Fall 2023. The mission of MoviesML is to create a collaborative student-run space for projects and independent research focused on the film industry. ',
+        onlylink: 'https://www.linkedin.com/company/movies-machine-learning-movieml/posts/?feedView=all',
     },
     {
-        iconUrl: threads,
+        iconUrl: biotech,
         theme: 'btn-back-green',
-        name: 'Full Stack Threads Clone',
-        description: 'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
-        link: 'https://github.com/adrianhajdin/threads',
+        name: 'Harvard Rare Diseases Hackathon- Second Place Winner',
+        description: 'Built an interactive dashboard of physicians and researchers, categorized by rare diseases that they have patients in and/or have research paper publications in. Tools used: Python and Neo4j.',
+        link: 'https://github.com/Jnguye84/rarediseases',
+        videolink: 'https://www.youtube.com/watch?v=nMjota5Zhok'
     },
     {
-        iconUrl: car,
+        iconUrl: druganalysis,
         theme: 'btn-back-blue',
-        name: 'Car Finding App',
-        description: 'Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.',
-        link: 'https://github.com/adrianhajdin/project_next13_car_showcase',
+        name: 'Biotech Sentiment Bot',
+        description: 'Built a dashboard to predict the success of a drug stock based on factors such as analysis on FDA Clinical Trials, analysis on SEC Forms and financial news, and social media sentiment. Tools used: RStudio and Python.',
+        link: 'https://github.com/Jnguye84/trading',
+        videolink: 'https://www.youtube.com/watch?v=eFQV9EWggUQ'
     },
     {
-        iconUrl: snapgram,
+        iconUrl: makeup,
         theme: 'btn-back-pink',
-        name: 'Full Stack Instagram Clone',
-        description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
-        link: 'https://github.com/adrianhajdin/social_media_app',
+        name: 'Makeup Brand Analysis',
+        description: 'Data cleaned, scraped, and mined various makeup brands in order to find the most affordable vegan makeup brands. Tools used: Jupyter Notebook and Python.',
+        link: 'https://github.com/Jnguye84/Makeup'
     },
     {
-        iconUrl: estate,
-        theme: 'btn-back-black',
-        name: 'Real-Estate Application',
-        description: 'Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.',
-        link: 'https://github.com/adrianhajdin/projects_realestate',
+        iconUrl: moviecard,
+        theme: 'btn-back-pink',
+        name: 'Movie Card Trading Game',
+        description: 'Created a full-stack application Pokemon-go inspired card game based on movies. Tools used: S3, TMDB API, Gemini API, Next.js, React, and Python. ',
+        videolink: 'https://www.youtube.com/watch?v=xqDsWUTFH0w'
     },
-    {
-        iconUrl: summiz,
-        theme: 'btn-back-yellow',
-        name: 'AI Summarizer Application',
-        description: 'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
-        link: 'https://github.com/adrianhajdin/project_ai_summarizer',
-    }
+
 ];
+
+export const Entertainmentprojects = [
+    {
+        iconUrl: bb,
+        theme: 'btn-back-red',
+        name: 'Bigger Than the Both of Us',
+        description: 'Self published passion project during the pandemic.',
+        link: 'https://www.amazon.com/Bigger-Than-Both-Us-Novel/dp/B08BW5Y5XD',
+    },
+    {
+        iconUrl: problemista,
+        theme: 'btn-back-red',
+        name: 'Jessica Film Potpourri',
+        description: 'Film review blog started during the pandemic.',
+        link: 'https://jessicafilmpotpourri.com/',
+    },
+    ];
