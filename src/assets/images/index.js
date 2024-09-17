@@ -13,8 +13,10 @@ import bb from './BB.png'
 import writing from './writing.png'
 import problemista from './problemista.png'
 import me from './me2.jpg'
+import bp from './bp.JPG'
 
 export {
+    bp,
     hero,
     meta,
     shopify,

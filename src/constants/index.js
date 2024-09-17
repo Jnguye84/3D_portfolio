@@ -1,4 +1,4 @@
-import { meta, shopify, starbucks, tesla, makeup,moviecard,biotech, druganalysis, moviesml, bb, problemista} from "../assets/images";
+import { meta, shopify, starbucks, tesla, makeup,moviecard,biotech, druganalysis, moviesml, bb, problemista,bp} from "../assets/images";
 import {
     contact,
     css,
@@ -179,4 +179,13 @@ export const Entertainmentprojects = [
         description: 'Film review blog started during the pandemic.',
         link: 'https://jessicafilmpotpourri.com/',
     },
+    {
+        iconUrl: bp,
+        theme: 'btn-back-red',
+        name: 'The Beautiful People',
+        description: 'Wrote The Beautiful People, a ten-minute play, performed in The Original! 2024 Play Festival.',
+        link: 'https://issuu.com/cvpa/docs/the_originals_2024_playbill_1_?fr=sYzZiNTYzODM3MjA',
+    },
+    
+
     ];
