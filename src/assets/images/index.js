@@ -10,10 +10,9 @@ import biotech from './biotech.jpg'
 import druganalysis from './druganalysis.jpg'
 import moviesml from './moviesml.png'
 import bb from './BB.png'
-import writing from './writing.png'
 import problemista from './problemista.png'
 import me from './me2.jpg'
-import bp from './bp.JPG'
+import bp from './bp.jpg'
 
 export {
     bp,
@@ -29,7 +28,6 @@ export {
     druganalysis,
     moviesml,
     bb,
-    writing,
     problemista,
     me
 }

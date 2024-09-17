@@ -183,7 +183,7 @@ export const Entertainmentprojects = [
         iconUrl: bp,
         theme: 'btn-back-red',
         name: 'The Beautiful People',
-        description: 'Wrote The Beautiful People, a ten-minute play, performed in The Original! 2024 Play Festival.',
+        description: 'Wrote The Beautiful People, a ten-minute play, performed in The Originals! 2024 Play Festival.',
         link: 'https://issuu.com/cvpa/docs/the_originals_2024_playbill_1_?fr=sYzZiNTYzODM3MjA',
     },
     
