@@ -153,14 +153,7 @@ export const projects = [
         name: 'Makeup Brand Analysis',
         description: 'Data cleaned, scraped, and mined various makeup brands in order to find the most affordable vegan makeup brands. Tools used: Jupyter Notebook and Python.',
         link: 'https://github.com/Jnguye84/Makeup'
-    },
-    {
-        iconUrl: moviecard,
-        theme: 'btn-back-pink',
-        name: 'Movie Card Trading Game',
-        description: 'Created a full-stack application Pokemon-go inspired card game based on movies. Tools used: S3, TMDB API, Gemini API, Next.js, React, and Python. ',
-        videolink: 'https://www.youtube.com/watch?v=xqDsWUTFH0w'
-    },
+    }
 
 ];
 
