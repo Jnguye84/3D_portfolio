@@ -169,8 +169,7 @@ export const Entertainmentprojects = [
         iconUrl: problemista,
         theme: 'btn-back-red',
         name: 'Jessica Film Potpourri',
-        description: 'Film review blog started during the pandemic.',
-        link: 'https://jessicafilmpotpourri.com/',
+        description: 'Film review blog started in 2021. Wrote articles about film reviews + analysis until 2024.'
     },
     {
         iconUrl: bp,
