@@ -18,6 +18,9 @@ const Navbar = () => {
         <NavLink to='/writing'  className={({ isActive }) => isActive ? "text-blue-600" : "text-black"}>
           WRITING
         </NavLink>
+        <NavLink to='/portfolio'  className={({ isActive }) => isActive ? "text-blue-600" : "text-black"}>
+          MIT PORTFOLIO SUBMISSION 2024
+        </NavLink>
       </nav>
     </header>
   );
