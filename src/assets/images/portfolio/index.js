@@ -1,22 +1,23 @@
-import harvard from './harvard.jpeg'
+import harvard from './harvard.mp4'
 import outlandish from './outlandish.png'
 import theater from './theater.png'
-import computer from './computer.jpg'
 import doc from './doc.jpg'
-import moviesml from './moviesml.jpg'
-import filmp from './Capture.jpg'
-import ramp from './ramp.jpg'
-import mac from './mac.jpg'
+import moviesml from './movie card trading game.mp4'
+import filmp from './filmpotpourri.jpg'
+import biotech from './biotech.mp4'
 import episode from './episode.jpg'
+import mitreality from './mitreality.mp4'
+import fun from './fun.mp4'
 export {
+    fun,
     harvard,
     filmp,
     outlandish,
-    computer,
     doc,
     moviesml,
     theater,
-    ramp,
-    mac,
-    episode
+    biotech,
+    episode,
+    mitreality
+
 }
