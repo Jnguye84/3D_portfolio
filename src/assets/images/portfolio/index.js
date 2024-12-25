@@ -7,10 +7,8 @@ import biotech from './biotech.mp4'
 import episode from './episode.jpg'
 import mitreality from './mitreality.mp4'
 import fun from './fun.mp4'
-import filmp from './filmpotpourri.PNG'
 export {
     fun,
-    filmp,
     harvard,
     outlandish,
     doc,
