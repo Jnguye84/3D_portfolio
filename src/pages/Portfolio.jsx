@@ -51,11 +51,7 @@ const Portfolio = () => {
       />
       During this time, jessicafilmpotpourri.com was born: a personal film review blog based on international movies from 
       countries such as South Korea, France, South Africa, and Kenya. This blog was live for 2 years until I moved onto hosting on Medium. 
-      <img
-        src={filmp}
-        alt='Profile Picture'
-        className='w-full h-auto max-w-sm object-cover'
-      />       
+ 
       In my freshman year of college as a data science major, I conducted undergraduate research on Jensen's Inequality and the Box-Muller Method to simulate how to find the best optimal number of vines within a vineyard. This 
       grew my curiosity into applications of higher-level mathematics as I dove into economics and their impacts on topics such as poly-centric systems of governance, environment, and incarceration. I joined the Mercatus Research Center as 
       an undergraduate fellow discussing these topics within context of peer-reviewed material and fundamental texts. One of my projects was exploring Consumats on a Network NetLogo model and further adding additional analysis to the
