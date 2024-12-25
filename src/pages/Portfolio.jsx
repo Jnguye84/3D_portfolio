@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-import {fun, mitreality, episode, harvard, outlandish, theater, doc, moviesml, filmp, biotech} from "../assets/images/portfolio";
+import {fun, mitreality, episode, harvard, outlandish, theater, doc, moviesml, biotech} from "../assets/images/portfolio";
 
 const Portfolio = () => {
   const videosRef = useRef([]);
