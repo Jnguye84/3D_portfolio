@@ -8,6 +8,9 @@ import episode from './episode.jpg'
 import mitreality from './mitreality.mp4'
 import fun from './fun.mp4'
 import doc_profile from './DSC_3846.jpg'
+import eckley_1 from './eckley_1.jpg'
+import eckley_2 from './eckley_2.jpg'
+
 export {
     fun,
     harvard,
@@ -18,6 +21,8 @@ export {
     biotech,
     episode,
     mitreality,
-    doc_profile
+    doc_profile,
+    eckley_1,
+    eckley_2
 
 }

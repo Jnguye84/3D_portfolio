@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
-import {fun, mitreality, episode, harvard, outlandish, theater, doc, moviesml, biotech, doc_profile} from "../assets/images/portfolio";
+import {fun, mitreality, episode, harvard, outlandish, theater, doc, moviesml, biotech, doc_profile, eckley_1, eckley_2} from "../assets/images/portfolio";
+import { problemista } from '../assets/images';
 
 const Portfolio = () => {
   const videosRef = useRef([]);
@@ -34,7 +35,7 @@ const Portfolio = () => {
   }, []);
   return (
   <section className='max-container'>      
-    My first experience with coding was from creating stories off the Episode game. 
+    My first experience with coding was from creating stories off the Episode game when I was in middle school. Here is one story "Every High School Ever."
     <img
         src={episode}
         alt='Profile Picture'
@@ -47,17 +48,30 @@ const Portfolio = () => {
       <img
         src={outlandish}
         alt='Profile Picture'
-        className='w-full h-auto max-w-sm object-cover'
+        className='object-cover transform scale-200'
       />
       During this time, jessicafilmpotpourri.com was born: a personal film review blog based on international movies from 
       countries such as South Korea, France, South Africa, and Kenya. This blog was live for 2 years until I moved onto hosting on Medium. 
- 
+      <img
+        src={problemista}
+        alt='Profile Picture'
+        className='object-cover transform scale-200'
+      />
       In my freshman year of college as a data science major, I conducted undergraduate research on Jensen's Inequality and the Box-Muller Method to simulate how to find the best optimal number of vines within a vineyard. This 
       grew my curiosity into applications of higher-level mathematics as I dove into economics and their impacts on topics such as poly-centric systems of governance, environment, and incarceration. I joined the Mercatus Research Center as 
       an undergraduate fellow discussing these topics within context of peer-reviewed material and fundamental texts. One of my projects was exploring Consumats on a Network NetLogo model and further adding additional analysis to the
       Chapter 19 of Introduction to Agent-Based Modeling by Marco Janssen. I primarily used excel for my data visualizations and obtained additional conclusions on the flow of the market based on
       different decision types and product gini distribution score.
-
+      <img
+        src={eckley_1}
+        alt='Profile Picture'
+        className='object-cover transform scale-200'
+      />
+      <img
+        src={eckley_2}
+        alt='Profile Picture'
+        className='object-cover transform scale-200'
+      />
       I went to the Harvard Rare Diseases Hackathon with a group from my university where we created a social-network based application connecting new diagnoses of rare Diseases
       with specialized dotors within the field based on their scholarly research. This project used many web APIs from medical community-based websites, google scholar, and ADCY5 website.
       The project went on to earn second place. 
@@ -93,21 +107,17 @@ const Portfolio = () => {
         ref={(el) => videosRef.current.push(el)}
         src={mitreality}
         alt='Episode Story GIF'
-        className='w-full h-auto max-w-sm object-cover'
+        className='object-cover transform scale-200'
         loop
         muted
         onMouseEnter={e => e.currentTarget.play()}
         onMouseLeave={e => e.currentTarget.pause()}
       />
-
-      I set out to complete small arduino projects through self-teaching and workshops offered by my school. I also did some hands-on learning with my computers that I had at home such as
-      building PCs, experimenting with building Hackintoshes.
-
-      Projects that I'm currently working on is a documentary on the process of creating a Magic Lantern show, one of the oldest forms of animation. 
+      Artistic projects that I'm currently working on is a documentary on the process of creating a Magic Lantern show, one of the oldest forms of animation. 
       <img
         src={doc}
         alt='Profile Picture'
-        className='w-full h-auto max-w-sm object-cover'
+        className='object-cover transform scale-200'
       />
       <img
         src={doc_profile}>
@@ -124,17 +134,14 @@ const Portfolio = () => {
       onMouseEnter={e => e.currentTarget.play()}
       onMouseLeave={e => e.currentTarget.pause()}
     />
-
-
       I still participate in storytelling endeavors and south to involve myself in projects of all artistic mediums- however, I hope to carry a legacy of making data more accessible and transparent to the greater good.
       <img
         src={theater}
         alt='Profile Picture'
-        className='w-full h-auto max-w-sm object-cover'
+        className='object-cover transform scale-200'
       />
-      <a href="URL">Link Text</a>
-      <a href="https://www.gmu.edu/news/2023-08/mason-students-take-bow-capital-fringe">Link Text</a>
-      <a href="https://www.broadwayworld.com/washington-dc/article/Review-THE-ROAD-TO-THE-END-Takes-a-Bittersweet-Trip-Down-Memory-Lane-at-Theater-J-20230718">Link</a>
+      <a href="https://www.gmu.edu/news/2023-08/mason-students-take-bow-capital-fringe">Mason Students Take a Bow at Capital Fringe (feature interview)</a>
+      <a href="https://www.broadwayworld.com/washington-dc/article/Review-THE-ROAD-TO-THE-END-Takes-a-Bittersweet-Trip-Down-Memory-Lane-at-Theater-J-20230718">Review: Road to the End (play review)</a>
       <video
       ref={(el) => videosRef.current.push(el)}
       src={fun}
