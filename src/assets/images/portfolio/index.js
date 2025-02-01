@@ -7,7 +7,7 @@ import biotech from './biotech.mp4'
 import episode from './episode.jpg'
 import mitreality from './mitreality.mp4'
 import fun from './fun.mp4'
-import doc_profile from './DSC_3846.JPG'
+import doc_profile from './DSC_3846.jpg'
 export {
     fun,
     harvard,
