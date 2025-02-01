@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-import {fun, mitreality, episode, harvard, outlandish, theater, doc, moviesml, biotech} from "../assets/images/portfolio";
+import {fun, mitreality, episode, harvard, outlandish, theater, doc, moviesml, biotech, doc_profile} from "../assets/images/portfolio";
 
 const Portfolio = () => {
   const videosRef = useRef([]);
@@ -109,6 +109,9 @@ const Portfolio = () => {
         alt='Profile Picture'
         className='w-full h-auto max-w-sm object-cover'
       />
+      <img
+        src={doc_profile}>
+      </img>
       I've wanted to spread these skills I've acquired from making software projects for others. This is when I created the club Movies and Machine Learning where the club sought to create
       a new project every semester. We also did workshops within local libraries to teach these projects to elementary-high school students. 
       <video
