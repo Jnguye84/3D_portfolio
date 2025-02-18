@@ -13,6 +13,8 @@ import bb from './BB.png'
 import problemista from './problemista.png'
 import me from './me2.jpg'
 import bp from './bp.jpg'
+import friends from './friends.webp'
+import doc from './DSC_3846.jpg'
 
 export {
     bp,
@@ -29,5 +31,7 @@ export {
     moviesml,
     bb,
     problemista,
-    me
+    me,
+    friends,
+    doc
 }

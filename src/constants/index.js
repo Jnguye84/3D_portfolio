@@ -1,4 +1,4 @@
-import { meta, shopify, starbucks, tesla, makeup,moviecard,biotech, druganalysis, moviesml, bb, problemista,bp} from "../assets/images";
+import { meta, shopify, starbucks, tesla,moviecard,biotech, druganalysis, moviesml, bb, problemista,bp, friends, doc} from "../assets/images";
 import {
     contact,
     css,
@@ -128,7 +128,7 @@ export const projects = [
         iconUrl: moviesml,
         theme: 'btn-back-red',
         name: 'Movies and Machine Learning Club',
-        description: 'Founder and president of club that started in Fall 2023. The mission of MoviesML is to create a collaborative student-run space for projects and independent research focused on the film industry. ',
+        description: 'Founder and president of club that started in Fall 2023. The mission of MoviesML is to create a collaborative student-run space for projects and independent research focused on the film industry. Projects include Financial News Bias Detector, Movie Card Trading Game, library workshops, Movie Poster Marketing Generator',
         onlylink: 'https://www.linkedin.com/company/movies-machine-learning-movieml/posts/?feedView=all',
     },
     {
@@ -148,28 +148,27 @@ export const projects = [
         videolink: 'https://www.youtube.com/watch?v=eFQV9EWggUQ'
     },
     {
-        iconUrl: makeup,
+        iconUrl: friends,
         theme: 'btn-back-pink',
-        name: 'Makeup Brand Analysis',
-        description: 'Data cleaned, scraped, and mined various makeup brands in order to find the most affordable vegan makeup brands. Tools used: Jupyter Notebook and Python.',
-        link: 'https://github.com/Jnguye84/Makeup'
+        name: 'Friends TV Show Dialogue Analysis',
+        description: 'I used the popular word association rule of the Apriori Algorithm to analyze inherent relationships between Friends characters through the TV show scripts. Tools used: Jupyter Notebook and Python.',
+        onlylink: 'https://medium.com/@jessicanguyen858/word-association-rules-defining-apriori-algorithm-and-using-it-for-tv-script-analysis-d1020f478b8e'
     }
 
 ];
 
 export const Entertainmentprojects = [
     {
-        iconUrl: bb,
+        iconUrl: doc,
         theme: 'btn-back-red',
-        name: 'Bigger Than the Both of Us',
-        description: 'Self published passion project during the pandemic.',
-        link: 'https://www.amazon.com/Bigger-Than-Both-Us-Novel/dp/B08BW5Y5XD',
+        name: 'Magic Lantern Documentary',
+        description: '2024-2025. Director and Writer.',
     },
     {
         iconUrl: problemista,
         theme: 'btn-back-red',
         name: 'Jessica Film Potpourri',
-        description: 'Film review blog started in 2021. Wrote articles about film reviews + analysis until 2024.'
+        description: '2021-2024. Wrote articles about film reviews + analysis.'
     },
     {
         iconUrl: bp,

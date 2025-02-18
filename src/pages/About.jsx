@@ -12,7 +12,15 @@ const About = () => {
       <div className='w-full md:w-1/2 p-4'>
         {/* Each sentence in its own paragraph for better spacing */}
         <p className='text-lg mb-4'>
-          Jessica is dedicated to crafting impactful storytelling through data science.
+          Jessica is dedicated to{' '}
+          <a 
+            href="https://medium.com/@jessicanguyen858" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-blue-600 hover:underline"
+          >
+            crafting impactful storytelling through data science
+          </a>.
         </p>
         <p className='text-lg mb-4'>
           She gravitates towards data on film and entertainment, including entertainment trends forecasting and refining process workflows and pipelines.
