@@ -147,7 +147,7 @@ export const projects = [
         theme: 'btn-back-pink',
         name: 'Friends TV Show Dialogue Analysis',
         description: 'I used the popular word association rule of the Apriori Algorithm to analyze inherent relationships between Friends characters through the TV show scripts. Tools used: Jupyter Notebook and Python.',
-        onlylink: 'https://medium.com/@jessicanguyen858/word-association-rules-defining-apriori-algorithm-and-using-it-for-tv-script-analysis-d1020f478b8e'
+        onlylink: 'https://medium.com/@jessicanguyen858/word-association-rules-defining-apriori-algorithm-and-using-it-for-tv-script-analysis-d1020f478b8e?sk=d379c08e443d32eafcac4b3f9ffd3adb'
     }
 
 ];
