@@ -124,7 +124,6 @@ export const projects = [
         theme: 'btn-back-red',
         name: 'Movies and Machine Learning Club',
         description: 'Founder and president of club that started in Fall 2023. The mission of MoviesML is to create a collaborative student-run space for projects and independent research focused on the film industry. Projects include Financial News Bias Detector, Movie Card Trading Game, library workshops, Movie Poster Marketing Generator',
-        onlylink: 'https://www.linkedin.com/company/movies-machine-learning-movieml/posts/?feedView=all',
     },
     {
         iconUrl: biotech,
@@ -147,7 +146,7 @@ export const projects = [
         theme: 'btn-back-pink',
         name: 'Friends TV Show Dialogue Analysis',
         description: 'I used the popular word association rule of the Apriori Algorithm to analyze inherent relationships between Friends characters through the TV show scripts. Tools used: Jupyter Notebook and Python.',
-        onlylink: 'https://medium.com/@jessicanguyen858/word-association-rules-defining-apriori-algorithm-and-using-it-for-tv-script-analysis-d1020f478b8e?sk=d379c08e443d32eafcac4b3f9ffd3adb'
+        link: 'https://medium.com/@jessicanguyen858/word-association-rules-defining-apriori-algorithm-and-using-it-for-tv-script-analysis-d1020f478b8e?sk=d379c08e443d32eafcac4b3f9ffd3adb'
     }
 
 ];

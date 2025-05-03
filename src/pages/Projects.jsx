@@ -34,7 +34,7 @@ const Projects = () => {
                       rel='noopener noreferrer'
                       className='font-semibold text-blue-600'
                     >
-                      Github Link
+                      Link
                     </Link>
                     <img
                       src={arrow}
