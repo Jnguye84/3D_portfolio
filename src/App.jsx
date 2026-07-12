@@ -121,7 +121,7 @@ function FloatingWindow({ win, onClose, onBringToFront, onDrag, onToggleFullscre
 
   return (
     <div
-      className={`floating-window ${win.isFullscreen ? 'is-fullscreen' : ''}`}
+      className={`floating-window ${win.isFullscreen ? 'is-fullscreen' : ''} ${win.kind === 'scroll-image' ? 'floating-window--pdf' : ''}`}
       style={{
         left: win.isFullscreen ? 0 : win.x,
         top: win.isFullscreen ? 0 : win.y,
@@ -171,7 +171,15 @@ function FloatingWindow({ win, onClose, onBringToFront, onDrag, onToggleFullscre
       <div className="fw-urlbar">
         <span>{win.url}</span>
       </div>
-      <div className="fw-content">{win.content}</div>
+      <div className="fw-content">
+        {win.kind === 'scroll-image' ? (
+          <div className="scroll-image-wrap">
+            <img className="scroll-image" src={win.scrollImageSrc} alt={win.title} />
+          </div>
+        ) : (
+          win.content
+        )}
+      </div>
     </div>
   )
 }
@@ -268,19 +276,15 @@ export default function App() {
       hoverRot: 50,
     },
     {
-      id: 'beautiful-people',
-      label: 'Beautiful People: Play',
+      id: 'Acting',
+      label: 'Acting',
       section: 'Files',
-      imageSrc: '/images/bp.jpg',
+      imageSrc: '/images/rte.JPG',
       cutout: true,
-      windowTitle: 'Beautiful People: Play',
-      windowUrl: 'portfolio://projects/beautiful-people',
-      windowContent: (
-        <div className="popup-copy">
-          <p>Stage Cart project window.</p>
-          <p>Use this area for captions, milestones, embeds, or notes.</p>
-        </div>
-      ),
+      windowTitle: 'Acting',
+      windowUrl: 'portfolio://projects/acting',
+      windowKind: 'scroll-image',
+      scrollImageSrc: '/documents/acting.png',
       position: { x: '75%', y: '1%', rot: 3, scale: 1.1 },
           },
               {
@@ -323,6 +327,22 @@ export default function App() {
         </div>
       ),
       position: { x: '20%', y: '60%',rot: 1, scale: 1 },
+    },
+        {
+      id: 'book',
+      label: 'book',
+      section: 'Files',
+      imageSrc: '/images/book.png',
+      cutout: true,
+      windowTitle: 'Book',
+      windowUrl: 'portfolio://projects/book',
+      windowContent: (
+        <div className="popup-copy">
+          <p>Stage Cart project window.</p>
+          <p>Use this area for captions, milestones, embeds, or notes.</p>
+        </div>
+      ),
+      position: { x: '15%', y: '23%',rot: 1, scale: .7},
     },
     {
       id: 'dress',
@@ -443,6 +463,8 @@ export default function App() {
         title: item.windowTitle,
         url: item.windowUrl ?? '',
         content: item.windowContent,
+        kind: item.windowKind,
+        scrollImageSrc: item.scrollImageSrc,
         x: `${120 + offset}px`,
         y: `${120 + offset}px`,
         z: nextZ,
