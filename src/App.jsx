@@ -1,15 +1,6 @@
 import React, { useMemo, useState, useRef } from 'react'
 import './index.css'
 
-const floatingMarks = [
-  { label: '01', tone: 'mint', x: '8%', y: '6%', size: '74px' },
-  { label: '02', tone: 'rose', x: '38%', y: '9%', size: '52px' },
-  { label: '03', tone: 'sand', x: '76%', y: '11%', size: '64px' },
-  { label: '04', tone: 'sky', x: '83%', y: '34%', size: '58px' },
-  { label: '05', tone: 'plum', x: '18%', y: '72%', size: '68px' },
-  { label: '06', tone: 'citrus', x: '69%', y: '73%', size: '48px' },
-]
-
 function Sidebar({ navSections, contactItems, searchQuery, onSearchChange, onOpenItem }) {
   return (
     <aside className="sidebar" aria-label="Site navigation">
@@ -27,7 +18,7 @@ function Sidebar({ navSections, contactItems, searchQuery, onSearchChange, onOpe
         <section key={section.id} className="nav-group" id={section.id}>
           <div className="nav-heading">
             <h2>{section.title}</h2>
-            <span>({section.count})</span>
+            <span>({section.items.length})</span>
           </div>
           <ul>
             {section.items.map((item) => (
@@ -37,6 +28,9 @@ function Sidebar({ navSections, contactItems, searchQuery, onSearchChange, onOpe
                   className="nav-item-button"
                   onClick={() => onOpenItem(item)}
                 >
+                  {item.imageSrc && (
+                    <img className="nav-item-icon" src={item.imageSrc} alt="" aria-hidden="true" />
+                  )}
                   {item.label}
                 </button>
               </li>
@@ -186,18 +180,59 @@ export default function App() {
   // Single shared data source for tiles and navigation
   const displayItems = [
     {
-      id: 'magic-lantern',
-      label: 'Magic Lantern',
+      id: 'paint',
+      label: 'Paint',
       section: 'Hardware',
-      imageSrc: '/images/magiclantern.jpg',
-      windowTitle: 'Magic Lantern',
-      windowUrl: 'portfolio://projects/magic-lantern',
+      imageSrc: '/images/paint.JPG',
+      cutout: true,
+      windowTitle: 'paint',
+      windowUrl: 'portfolio://projects/paint',
       windowContent: (
         <div className="popup-copy">
           <p>Magic Lantern project window.</p>
           <p>Replace this with your own project notes, media, and links.</p>
         </div>
       ),
+      position: { x: '1%', y: '1%', rot: 5, scale: 1 },
+    },
+    {
+      id: 'graduation',
+      label: 'graduation',
+      section: 'Hardware',
+      imageSrc: '/images/grad1.jpg',
+      cutout: true,
+      windowTitle: 'graduation',
+      windowUrl: 'portfolio://projects/graduation',
+      windowContent: (
+        <div className="popup-copy">
+          <p>Magic Lantern project window.</p>
+          <p>Replace this with your own project notes, media, and links.</p>
+        </div>
+      ),
+      position: { x: '50%', y: '10%', rot: 1, scale: 1 },
+    },
+    {
+      id: 'jessica',
+      label: 'jessica',
+      section: 'jessica',
+      imageSrc: '/images/jessica.png',
+      cutout: true,
+      position: { x: '10%', y: '40%', rot: 1, scale: 1 },
+    },
+     {
+      id: 'jester',
+      label: 'jester',
+      section: 'Hardware',
+      imageSrc: '/images/jester_loop.gif',
+      cutout: true,
+      windowTitle: 'jester',
+      windowUrl: 'portfolio://projects/jester',
+      windowContent: (
+        <div className="popup-copy">
+          <img className="popup-image" src="/images/jester_loop.gif" alt="jester" />
+        </div>
+      ),
+      position: { x: '30%', y: '40%', rot: 1, scale: 1},
     },
     {
       id: 'phone-booth',
@@ -213,20 +248,121 @@ export default function App() {
           <p>Add your own story, context, and supporting content here.</p>
         </div>
       ),
+      position: { x: '80%', y: '30%', rot: -3, scale: .9 },
     },
     {
-      id: 'stage-cart',
-      label: 'Stage Cart',
+      id: 'clay',
+      label: 'Polymer Clay',
+      section: 'Software',
+      imageSrc: '/images/clay_figure-Photoroom.png',
+      cutout: true,
+      windowTitle: 'Polymer Clay',
+      windowUrl: 'portfolio://projects/polymer-clay',
+      windowContent: (
+        <div className="popup-copy">
+          <p>Polymer Clay</p>
+          <p>Add your own story, context, and supporting content here.</p>
+        </div>
+      ),
+      position: { x: '50%', y: '60%', rot: 10, scale: 1 },
+      hoverRot: 50,
+    },
+    {
+      id: 'beautiful-people',
+      label: 'Beautiful People: Play',
       section: 'Files',
       imageSrc: '/images/bp.jpg',
-      windowTitle: 'Stage Cart',
-      windowUrl: 'portfolio://projects/stage-cart',
+      cutout: true,
+      windowTitle: 'Beautiful People: Play',
+      windowUrl: 'portfolio://projects/beautiful-people',
       windowContent: (
         <div className="popup-copy">
           <p>Stage Cart project window.</p>
           <p>Use this area for captions, milestones, embeds, or notes.</p>
         </div>
       ),
+      position: { x: '75%', y: '1%', rot: 3, scale: 1.1 },
+          },
+              {
+      id: 'christmas',
+      label: 'christmas',
+      section: 'Files',
+      imageSrc: '/images/christmas1.JPG',
+      hoverImageSrc: '/images/christmas2.JPG',
+      cutout: true,
+      position: { x: '31%', y: '1%', rot: 3, scale: 1.1 },
+          },
+        {
+      id: 'book',
+      label: 'book',
+      section: 'Files',
+      imageSrc: '/images/book.png',
+      cutout: true,
+      windowTitle: 'Stage Cart',
+      windowUrl: 'portfolio://projects/book',
+      windowContent: (
+        <div className="popup-copy">
+          <p>Stage Cart project window.</p>
+          <p>Use this area for captions, milestones, embeds, or notes.</p>
+        </div>
+      ),
+      position: { x: '20%', y: '60%',rot: 1, scale: 1 },
+    },
+    {
+      id: 'stamp',
+      label: 'stamp',
+      section: 'Files',
+      imageSrc: '/images/stamp1.JPG',
+      cutout: true,
+      windowTitle: 'Stamp',
+      windowUrl: 'portfolio://projects/stamp',
+      windowContent: (
+        <div className="popup-copy">
+          <p>Stage Cart project window.</p>
+          <p>Use this area for captions, milestones, embeds, or notes.</p>
+        </div>
+      ),
+      position: { x: '20%', y: '60%',rot: 1, scale: 1 },
+    },
+    {
+      id: 'dress',
+      label: 'stamp',
+      section: 'Files',
+      imageSrc: '/images/dress.jpg',
+      cutout: true,
+      windowTitle: 'Stamp',
+      windowUrl: 'portfolio://projects/dress',
+      windowContent: (
+        <div className="popup-copy">
+          <p>Stage Cart project window.</p>
+          <p>Use this area for captions, milestones, embeds, or notes.</p>
+        </div>
+      ),
+      position: { x: '70%', y: '60%',rot: 1, scale: 1 },
+    },
+    {
+      id: 'star',
+      label: 'star',
+      section: 'Files',
+      imageSrc: '/images/star.png',
+      cutout: true,
+      position: { x: '66%', y: '1%',rot: 1, scale: .4 },
+    },
+    {
+      id: 'square',
+      label: 'square',
+      section: 'Files',
+      imageSrc: '/images/square.png',
+      cutout: true,
+      position: { x: '1%', y: '50%',rot: 1, scale: .6 },
+    },
+    {
+      id: 'eightball',
+      label: 'eightball',
+      section: 'Files',
+      imageSrc: '/images/eightball.png',
+      cutout: true,
+      position: { x: '33%', y: '51%',rot: 1, scale: .3 },
     },
   ]
 
@@ -239,16 +375,16 @@ export default function App() {
       windowTitle: 'Email',
       windowContent: (
         <div style={{ padding: 12 }}>
-          <p style={{ margin: 0 }}>hello@example.com</p>
+          <p style={{ margin: 0 }}>jessicanguyen858@gmail.com</p>
         </div>
       ),
     },
     {
-      id: 'contact-instagram',
-      label: 'Instagram',
+      id: 'substack',
+      label: 'Substack',
       section: 'Contact',
       imageSrc: null,
-      windowTitle: 'Instagram',
+      windowTitle: 'Substack',
       windowContent: (
         <div style={{ padding: 12 }}>
           <p style={{ margin: 0 }}>https://www.instagram.com/</p>
@@ -258,6 +394,9 @@ export default function App() {
   ]
 
   const [searchQuery, setSearchQuery] = useState('')
+  const [windows, setWindows] = useState([])
+  const [hoveredItemId, setHoveredItemId] = useState(null)
+  const zRef = useRef(1)
 
   const filteredNavSections = useMemo(() => {
     const query = searchQuery.trim().toLowerCase()
@@ -283,59 +422,33 @@ export default function App() {
     })
   }, [searchQuery, contactItems])
 
-  // Generate evenly spaced positions inside the content area to avoid overlaps
-  function generatePositions(n) {
-    const minX = 20 // percent from left of content area (keeps clear of sidebar)
-    const maxX = 90
-    const minY = 8
-    const maxY = 78
-
-    const cols = Math.ceil(Math.sqrt(n))
-    const rows = Math.ceil(n / cols)
-
-    const positions = []
-    let idx = 0
-    for (let r = 0; r < rows; r++) {
-      for (let c = 0; c < cols; c++) {
-        if (idx >= n) break
-        const x = cols === 1 ? (minX + maxX) / 2 : minX + (c / (cols - 1)) * (maxX - minX)
-        const y = rows === 1 ? (minY + maxY) / 2 : minY + (r / (rows - 1)) * (maxY - minY)
-        // small deterministic jitter to make layout feel organic
-        const jitterX = ((idx * 37) % 7) - 3 // pseudo-random-looking but deterministic
-        const jitterY = ((idx * 53) % 7) - 3
-        const px = Math.max(minX, Math.min(maxX, x + jitterX))
-        const py = Math.max(minY, Math.min(maxY, y + jitterY))
-        const rot = ((idx * 23) % 28) - 14
-        positions.push({ x: `${px}%`, y: `${py}%`, rot, scale: 1 })
-        idx++
-      }
-    }
-    return positions
-  }
-
-  const scatteredPositions = generatePositions(displayItems.length)
-
-  const [windows, setWindows] = useState([])
-  const zRef = useRef(2000)
-
-  function openWindow(item, pos) {
-    const id = `${Date.now()}-${Math.floor(Math.random() * 10000)}`
+  function openWindow(item) {
+    const existing = windows.find((w) => w.itemId === item.id)
     zRef.current += 1
-    const jitterX = Math.floor(Math.random() * 21) - 10
-    const jitterY = Math.floor(Math.random() * 21) - 10
-    const x = `${Math.round(window.innerWidth / 2 + jitterX)}px`
-    const y = `${Math.round(window.innerHeight / 2 + jitterY)}px`
-    const newWin = {
-      id,
-      title: item.windowTitle,
-      url: item.windowUrl,
-      content: item.windowContent,
-      x,
-      y,
-      z: zRef.current,
-      isFullscreen: false,
+    const nextZ = zRef.current
+
+    if (existing) {
+      setWindows((s) => s.map((w) => (w.id === existing.id ? { ...w, z: nextZ } : w)))
+      return
     }
-    setWindows((s) => [...s, newWin])
+
+    const cascadeStep = 32
+    const offset = (windows.length % 8) * cascadeStep
+
+    setWindows((s) => [
+      ...s,
+      {
+        id: `${item.id}-${nextZ}`,
+        itemId: item.id,
+        title: item.windowTitle,
+        url: item.windowUrl ?? '',
+        content: item.windowContent,
+        x: `${120 + offset}px`,
+        y: `${120 + offset}px`,
+        z: nextZ,
+        isFullscreen: false,
+      },
+    ])
   }
 
   function openItemWindow(item) {
@@ -392,33 +505,37 @@ export default function App() {
         <MainCanvas />
 
         <section className="scatter-main">
-          {displayItems.map((item, idx) => {
-            const pos = scatteredPositions[idx]
+          {displayItems.map((item) => {
+            const isHovered = hoveredItemId === item.id
+            const rot = isHovered && item.hoverRot !== undefined ? item.hoverRot : item.position?.rot
             return (
               <article
                 key={item.id}
                 className={`scatter-collection-card ${item.cutout ? 'scatter-collection-card--cutout' : ''}`}
                 style={{
-                  left: pos.x,
-                  top: pos.y,
-                  transform: `rotate(${pos.rot}deg) scale(${pos.scale})`,
+                  left: item.position?.x,
+                  top: item.position?.y,
+                  transform: `rotate(${rot}deg) scale(${item.position?.scale})`,
                   cursor: 'pointer',
                 }}
-                onClick={() => openWindow(item, pos)}
+                onClick={() => openWindow(item, 1)}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault()
-                    openWindow(item, pos)
+                    openWindow(item, 1)
                   }
                 }}
+                onMouseEnter={() => setHoveredItemId(item.id)}
+                onMouseLeave={() => setHoveredItemId(null)}
                 tabIndex={0}
                 role="button"
                 aria-label={`Open ${item.label}`}
               >
-                <img className="tile-image" src={item.imageSrc} alt={item.label} />
-                <div className="card-label">
-                  <p className="card-title">{item.label}</p>
-                </div>
+                <img
+                  className="tile-image"
+                  src={item.hoverImageSrc && isHovered ? item.hoverImageSrc : item.imageSrc}
+                  alt={item.label}
+                />
               </article>
             )
           })}
